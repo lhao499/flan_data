@@ -727,22 +727,23 @@ TASK_CONFIGS['samsum'] = TaskConfig(
 
 
 # ============================== xsum ==========================================
-@seqio.map_over_dataset
-def _process_xsum(example):
-  return {
-      'text': example['document'],
-      'summary': example['summary'],
-  }
+# TODO(haoliuhl): download and enable xsum
+# @seqio.map_over_dataset
+# def _process_xsum(example):
+#   return {
+#       'text': example['document'],
+#       'summary': example['summary'],
+#   }
 
 
-TASK_CONFIGS['xsum'] = TaskConfig(
-    source=seqio.TfdsDataSource(tfds_name='xsum:1.0.0', splits=SPLITS_DICT),
-    preprocessors=[
-        _process_xsum,
-    ],
-    postprocess_fn=None,
-    metric_fns=[t5_metrics.rouge],
-)
+# TASK_CONFIGS['xsum'] = TaskConfig(
+#     source=seqio.TfdsDataSource(tfds_name='xsum:1.1.0', splits=SPLITS_DICT),
+#     preprocessors=[
+#         _process_xsum,
+#     ],
+#     postprocess_fn=None,
+#     metric_fns=[t5_metrics.rouge],
+# )
 
 
 # ============================== squad_v1 ======================================
@@ -1210,7 +1211,7 @@ def _process_glue_mrpc(example):
 
 TASK_CONFIGS['glue_mrpc'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/mrpc:1.0.0',
+        tfds_name='glue/mrpc:2.0.0',
         splits={
             'train': f'train[:-{NUM_VAL_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1247,7 +1248,7 @@ def _process_glue_qqp(example):
 
 TASK_CONFIGS['glue_qqp'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/qqp:1.0.0',
+        tfds_name='glue/qqp:2.0.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1557,7 +1558,7 @@ def _process_wmt16_translate_ruen(example):
 wmt_language_to_process = {
     'de-en': _process_wmt16_translate_deen,
     'tr-en': _process_wmt16_translate_tren,
-    'cs-en': _process_wmt16_translate_csen,
+    # 'cs-en': _process_wmt16_translate_csen,
     'fi-en': _process_wmt16_translate_fien,
     'ro-en': _process_wmt16_translate_roen,
     'ru-en': _process_wmt16_translate_ruen,
@@ -1600,7 +1601,7 @@ def _process_common_gen(example):
 
 TASK_CONFIGS['common_gen'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='gem/common_gen:1.0.0',
+        tfds_name='gem/common_gen:1.1.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1637,7 +1638,7 @@ def _process_dart(example):
 
 TASK_CONFIGS['dart'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='gem/dart:1.0.0',
+        tfds_name='gem/dart:1.1.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1670,7 +1671,7 @@ def _process_e2e_nlg(example):
 
 TASK_CONFIGS['e2e_nlg'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='gem/e2e_nlg:1.0.0',
+        tfds_name='gem/e2e_nlg:1.1.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1703,7 +1704,7 @@ def _process_web_nlg_en(example):
 
 TASK_CONFIGS['web_nlg_en'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='gem/web_nlg_en:1.0.0',
+        tfds_name='gem/web_nlg_en:1.1.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1888,7 +1889,7 @@ def _process_cola(example):
 
 TASK_CONFIGS['cola'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/cola:1.0.0',
+        tfds_name='glue/cola:2.0.0',
         splits={
             'train': f'train[:-{NUM_VAL_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1921,7 +1922,7 @@ def _process_sst2(example):
 
 TASK_CONFIGS['sst2'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/sst2:1.0.0',
+        tfds_name='glue/sst2:2.0.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1954,7 +1955,7 @@ def _process_mnli(example):
 
 TASK_CONFIGS['mnli_matched'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/mnli:1.0.0',
+        tfds_name='glue/mnli:2.0.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -1970,7 +1971,7 @@ TASK_CONFIGS['mnli_matched'] = TaskConfig(
 
 TASK_CONFIGS['mnli_mismatched'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/mnli:1.0.0',
+        tfds_name='glue/mnli:2.0.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -2007,7 +2008,7 @@ def _process_qnli(example):
 
 TASK_CONFIGS['qnli'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/qnli:1.0.0',
+        tfds_name='glue/qnli:2.0.0',
         splits={
             'train': f'train[:{NUM_TRAIN_EXAMPLES}]',
             'validation': f'train[-{NUM_VAL_EXAMPLES}:]',
@@ -2040,7 +2041,7 @@ def _process_wnli(example):
 
 TASK_CONFIGS['wnli'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/wnli:1.0.0',
+        tfds_name='glue/wnli:2.0.0',
         splits={
             'train': 'train[:-30]',
             'validation': 'train[-30:]',
@@ -2147,7 +2148,7 @@ def _process_stsb(example):
 
 TASK_CONFIGS['stsb'] = TaskConfig(
     source=seqio.TfdsDataSource(
-        tfds_name='glue/stsb:1.0.0',
+        tfds_name='glue/stsb:2.0.0',
         splits={
             'train': 'train[:-100]',
             'validation': 'train[-100:]',

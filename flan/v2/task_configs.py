@@ -126,15 +126,16 @@ DIALOG_II_TASK_CONFIGS["wiki_dialog" +
 
 
 # ================================== QReCC ====================================
-DIALOG_TASK_CONFIGS["qrecc"] = TaskConfig(
-    source=seqio.TfdsDataSource(tfds_name="q_re_cc:1.0.0", splits=["train"]),
-    preprocessors=[prep.qrecc, prep.format_dialog],
-    postprocess_fn=post.take_first_line,
-    metric_fns=[t5_metrics.accuracy],
-)
-# '_input_inversion' will get mapped to an inverted template
-DIALOG_II_TASK_CONFIGS["qrecc" +
-                       "_input_inversion"] = DIALOG_TASK_CONFIGS["qrecc"]
+# TODO(haoliuhl): debug qrecc format error
+# DIALOG_TASK_CONFIGS["qrecc"] = TaskConfig(
+#     source=seqio.TfdsDataSource(tfds_name="q_re_cc:1.0.0", splits=["train"]),
+#     preprocessors=[prep.qrecc, prep.format_dialog],
+#     postprocess_fn=post.take_first_line,
+#     metric_fns=[t5_metrics.accuracy],
+# )
+# # '_input_inversion' will get mapped to an inverted template
+# DIALOG_II_TASK_CONFIGS["qrecc" +
+#                        "_input_inversion"] = DIALOG_TASK_CONFIGS["qrecc"]
 
 # ========================= T0 (P3) Training Sets ===========================
 for task_name in constants_t0.T0_TRAIN_TASK_SPLITS:
