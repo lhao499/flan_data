@@ -704,23 +704,22 @@ TASK_CONFIGS['samsum'] = _TaskConfig(
 
 
 # ============================== xsum ==========================================
-# TODO(haoliuhl): enable xsum
-# @seqio.map_over_dataset
-# def _process_xsum(example):
-#   return {
-#       'text': example['document'],
-#       'summary': example['summary'],
-#   }
+@seqio.map_over_dataset
+def _process_xsum(example):
+  return {
+      'text': example['document'],
+      'summary': example['summary'],
+  }
 
 
-# TASK_CONFIGS['xsum'] = _TaskConfig(
-#     source=seqio.TfdsDataSource(tfds_name='xsum:1.1.0', splits=SPLITS_DICT),
-#     preprocessors=[
-#         _process_xsum,
-#     ],
-#     postprocess_fn=None,
-#     metric_fns=[t5_metrics.rouge],
-# )
+TASK_CONFIGS['xsum'] = _TaskConfig(
+    source=seqio.TfdsDataSource(tfds_name='huggingface:xsum', splits=SPLITS_DICT),
+    preprocessors=[
+        _process_xsum,
+    ],
+    postprocess_fn=None,
+    metric_fns=[t5_metrics.rouge],
+)
 
 
 # ============================== squad_v1 ======================================
@@ -1500,7 +1499,7 @@ def _process_wmt16_translate_ruen(example):
 wmt_language_to_process = {
     'de-en': _process_wmt16_translate_deen,
     'tr-en': _process_wmt16_translate_tren,
-    # 'cs-en': _process_wmt16_translate_csen, #TODO(haoliuhl): download and enable this
+    # 'cs-en': _process_wmt16_translate_csen,
     'fi-en': _process_wmt16_translate_fien,
     'ro-en': _process_wmt16_translate_roen,
     'ru-en': _process_wmt16_translate_ruen,

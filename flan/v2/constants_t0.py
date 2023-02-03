@@ -1482,71 +1482,71 @@ T0_TRAIN_TASK_SPLITS = {
         'train': 8134,
         'validation': 926
     },
-    't0_task_adaptation:quail_context_description_question_answer_id': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_description_question_answer_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_description_question_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_question_answer_description_id': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_question_answer_description_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_question_description_answer_id': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_question_description_answer_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_context_question_description_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_description_context_question_answer_id': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_description_context_question_answer_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_description_context_question_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_no_prompt_id': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
-    't0_task_adaptation:quail_no_prompt_text': {
-        'challenge': 556,
-        'train': 10246,
-        'validation': 2164
-    },
+    # 't0_task_adaptation:quail_context_description_question_answer_id': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_description_question_answer_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_description_question_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_question_answer_description_id': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_question_answer_description_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_question_description_answer_id': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_question_description_answer_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_context_question_description_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_description_context_question_answer_id': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_description_context_question_answer_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_description_context_question_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_no_prompt_id': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
+    # 't0_task_adaptation:quail_no_prompt_text': {
+    #     'challenge': 556,
+    #     'train': 10246,
+    #     'validation': 2164
+    # },
     't0_task_adaptation:quarel_choose_between': {
         'test': 552,
         'train': 1941,
